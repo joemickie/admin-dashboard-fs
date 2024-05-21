@@ -43,6 +43,11 @@ app.use("/general", generalRoutes);
 app.use("/management", managementRoutes);
 app.use("/sales", salesRoutes);
 
+// Add a root route
+app.get('/', (req, res) => {
+    res.send('Welcome to the API');
+});
+
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 9000;
 mongoose
